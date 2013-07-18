@@ -23,8 +23,11 @@ header {
 }
 
 nav {
-  float: right;
-  padding-right: 20px;
+  clear: both;
+  background-color: #2ECC71;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
 }
 
 nav a {
@@ -69,6 +72,19 @@ th {
   color: white;
   margin: 0;
   width: 150px;
+}
+
+.session {
+  float: right;
+  height: 50px;
+  padding-right: 20px;
+}
+
+.btn.user {
+  font-size: 0.8em;
+  width: 200px;
+  padding: 5px;
+  background-color: #3498DB;
 }
 
 .top {

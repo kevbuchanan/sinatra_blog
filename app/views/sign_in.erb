@@ -1,0 +1,22 @@
+<h3>Sign In</h3>
+<% if @error %>
+  <p><%= @error %>.</p>
+<% end %>
+<form action='/login' method='post'>
+  <input class='text' type='text' name='user[email]' placeholder='Email'><br>
+  <input class='text' type='password' name='user[password]' placeholder='Password'><br>
+  <input class='btn new' type='submit' text='Sign In'>
+</form>
+<h3>Create Account</h3>
+<% if @user && @user.errors %>
+  <% @user.errors.each do |attr, error| %>
+    <p><%= attr.capitalize %> <%= error %>.</p>
+  <% end %>
+<% end %>
+<form action='/users/create' method='post'>
+  <input class='text' type='text' name='user[email]' placeholder='Email'><br>
+  <input class='text' type='text' name='user[name]' placeholder='Username'><br>
+  <input class='text' type='password' name='user[password]' placeholder='Password'><br>
+  <input class='text' type='password' name='user[password_confirmation]' placeholder='Password Confirmation'></br>
+  <input class='btn new' type='submit' text='Submit'>
+</form>

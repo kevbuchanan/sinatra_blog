@@ -1,0 +1,4 @@
+<h3>Posts from <%=@user.name%></h3>
+<% @user.posts.each do |post| %>
+  <li><a href='/post/<%=post.id%>'><%= post.title %></a></li>
+<% end %>

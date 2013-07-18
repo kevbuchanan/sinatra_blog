@@ -16,6 +16,7 @@ post '/post/create' do
   params[:post][:tags] = params[:post][:tags].split(', ').map do |name|
     Tag.find_or_create_by_title(name)
   end
+  params[:post][:user_id] = current_user
   @post = Post.create(params[:post])
   if @post.valid?
     redirect to("/post/#{@post.id}")

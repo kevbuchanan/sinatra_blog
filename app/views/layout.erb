@@ -22,11 +22,19 @@
 <body>
   <div class='container'>
     <header>
-      <h1>Super Anonymous Blog</h1>
-      <nav>
-        <a href='/'>Home<a>
-      </nav>
+      <h1>Not Anonymous Blog</h1>
+      <div class='session'>
+        <% if logged_in? %>
+          <span>Logged in as <a class='user' href="/users/<%=current_user.id%>/posts"><%=current_user.name%></a></span>
+          <form action='/logout' method='post'><input class='btn user' type='submit' value='Logout'></form>
+        <% else %>
+          <form action='/login' method='get'><input class='btn user' type='submit' value='Login or Create Account'></form>
+        <% end %>
+      </div>
     </header>
+    <nav>
+      <a href='/'>Home<a>
+    </nav>
     <div class='content'>
       <%= yield %>
     </div>

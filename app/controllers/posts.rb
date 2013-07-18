@@ -40,7 +40,9 @@ end
 
 post '/post/delete/:id' do
   @post = Post.find(params[:id])
-  @post.destroy
+  if logged_in? && @post.user && @post.user.id == session[:user_id]
+    @post.destroy
+  end
   redirect to('/')
 end
 

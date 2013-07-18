@@ -2,9 +2,11 @@
 <h3>All Posts</h3>
 <ul>
 <% @posts.each do |post| %>
+  <div class='hover'>
   <li><a href='/post/<%=post.id%>'><%= post.title %></a><br>
     <p><%=post.snippet%>...</p>
   </li>
+  </div>
 <% end %>
 </ul>
 

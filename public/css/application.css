@@ -58,11 +58,12 @@ th {
 
 .content a {
   text-decoration: none;
-  list-style: circle;
+  color: #2980B9;
 }
 
 .content li {
   margin-top: 10px;
+  list-style-image: url('');
 }
 
 .btn {
@@ -119,6 +120,10 @@ th {
   text-decoration: none;
   overflow: hidden;
   white-space: nowrap;
+}
+
+a.tag {
+  color: white;
 }
 
 .new {

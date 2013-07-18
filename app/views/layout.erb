@@ -25,15 +25,17 @@
       <h1>Not Anonymous Blog</h1>
       <div class='session'>
         <% if logged_in? %>
-          <span>Logged in as <a class='user' href="/users/<%=current_user.id%>/posts"><%=current_user.name%></a></span>
-          <form action='/logout' method='post'><input class='btn user' type='submit' value='Logout'></form>
+          <form action='/logout' method='post'><input class='btn user logout' type='submit' value='Logout <%=current_user.name%>'></form>
         <% else %>
-          <form action='/login' method='get'><input class='btn user' type='submit' value='Login or Create Account'></form>
+          <form action='/login' method='get'><input class='btn user' type='submit' value='Sign In or Create Account'></form>
         <% end %>
       </div>
     </header>
     <nav>
       <a href='/'>Home<a>
+      <% if logged_in? %>
+      <a href="/users/<%=current_user.id%>/posts">My Posts</a>
+      <% end %>
     </nav>
     <div class='content'>
       <%= yield %>

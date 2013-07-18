@@ -1,4 +1,8 @@
 <h3>Posts Tagged with '<%=@tag.title%>'</h3>
+<ul>
 <% @tag.posts.each do |post| %>
-  <li><a href='/post/<%=post.id%>'><%= post.title %></a></li>
+  <li><a href='/post/<%=post.id%>'><%= post.title %></a><br>
+    <p><%=post.snippet%>...</p>
+  </li>
+</ul>
 <% end %>

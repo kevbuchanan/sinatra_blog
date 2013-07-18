@@ -4,7 +4,11 @@ end
 
 get '/post/edit/:id' do
   @post = Post.find(params[:id])
-  erb :edit_post
+  if logged_in? && @post.user && @post.user.id == session[:user_id]
+    erb :edit_post
+  else
+    redirect to ('/')
+  end
 end
 
 get '/post/:id' do
@@ -16,7 +20,7 @@ post '/post/create' do
   params[:post][:tags] = params[:post][:tags].split(', ').map do |name|
     Tag.find_or_create_by_title(name)
   end
-  params[:post][:user_id] = current_user
+  params[:post][:user_id] = session[:user_id]
   @post = Post.create(params[:post])
   if @post.valid?
     redirect to("/post/#{@post.id}")

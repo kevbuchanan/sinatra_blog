@@ -1,10 +1,12 @@
 <div class='top'>
+  <% if logged_in? && @post.user && session[:user_id] == @post.user.id %>
   <form action='/post/edit/<%=@post.id%>' method='get'>
     <input class='btn edit' type='submit' value='Edit Post'>
   </form>
   <form action='/post/delete/<%=@post.id%>' method='post'>
     <input class='btn delete' type='submit' value='Delete Post'>
   </form>
+  <% end %>
   <div class='tags'>
   <% @post.tags.each do |tag|%>
     <a class='tag' href='/tag/<%=tag.title%>'><%=tag.title%></a>
@@ -14,7 +16,15 @@
 <div class='post'>
   <div class='head'>
     <h2 class='title'><%= @post.title %></h1>
-    <span class='date'><%= @post.created_at.strftime("%B %d, %Y")%></span>
+    <span class='date'>
+      <% if @post.user %>
+        By <%=@post.user.name%>
+      <% else %>
+        By Anonymous
+      <% end %>
+        on
+      <%= @post.created_at.strftime("%B %d, %Y")%>
+    </span>
   </div>
   <p><%= @post.body %></p>
 </div>

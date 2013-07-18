@@ -6,4 +6,7 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
 
+  def snippet
+    self.body[0..150]
+  end
 end

@@ -1,4 +1,8 @@
 <h3>Posts from <%=@user.name%></h3>
+<ul>
 <% @user.posts.each do |post| %>
-  <li><a href='/post/<%=post.id%>'><%= post.title %></a></li>
+  <li><a href='/post/<%=post.id%>'><%= post.title %></a><br>
+    <p><%=post.snippet%>...</p>
+  </li>
+</ul>
 <% end %>

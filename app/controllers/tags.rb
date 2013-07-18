@@ -1,5 +1,6 @@
-get '/tag/:id' do
-  @tag = Tag.find(params[:id])
+get '/tag/:title' do
+  @tag = Tag.find_by_title(params[:title])
+  erb :tag
 end
 
 post '/tag/:post_id' do

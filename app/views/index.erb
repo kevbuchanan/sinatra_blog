@@ -1,6 +1,6 @@
 <form action='/post/new' method='get'><input type='submit' value='New Post'></form>
 <h3>All Posts</h3>
 <% @posts.each do |post| %>
-  <p><%= post.title %></p>
+  <p><a href='/post/<%=post.id%>'><%= post.title %></a></p>
 <% end %>
 

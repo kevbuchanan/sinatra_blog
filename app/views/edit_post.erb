@@ -1,0 +1,12 @@
+<h3>Edit Your Post</h3>
+<% if @post && @post.errors %>
+  <% @post.errors.each do |attr, error| %>
+    <p><%= attr.capitalize %> <%= error %>.</p>
+  <% end %>
+<% end %>
+<form action='/post/edit/<%=@post.id%>' method='post'>
+  <input type='text' name='post[title]' value='<%=@post.title%>'>
+  <input type='text' name='post[tags]' value='<%=@post.tags.map(&:title).join(', ')%>'>
+  <textarea name='post[body]' rows='20' cols='50'><%=@post.body%></textarea>
+  <input type='submit' text='Edit'>
+</form>

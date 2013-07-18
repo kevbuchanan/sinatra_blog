@@ -57,6 +57,10 @@ th {
   list-style: circle;
 }
 
+.content li {
+  margin-top: 10px;
+}
+
 .btn {
   border-radius: 5px;
   border: none;
@@ -73,7 +77,7 @@ th {
 }
 
 .tags {
-  width: 300px;
+  width: 380px;
   height: 70px;
   padding: 5px;
   border-radius: 5px;
@@ -113,15 +117,27 @@ th {
   clear: both;
 }
 
+.date {
+  float: right;
+}
+
 .post p {
   font-family: 'EB Garamond';
   line-height: 1.4em;
 }
 
-h2.title {
+.head {
   border-bottom: 2px solid #BDC3C7;
   color: #2C3E50;
+  margin-top: 20px;
+}
 
+.head .date {
+  padding-top: 10px;
+}
+
+h2.title {
+  display: inline;
 }
 
 .text {
@@ -129,6 +145,7 @@ h2.title {
   box-shadow: none;
   border: 2px solid #95A5A6;
   margin-bottom: 10px;
+  padding: 5px;
 }
 
 input.text {

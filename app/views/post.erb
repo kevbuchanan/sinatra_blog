@@ -12,6 +12,9 @@
   </div>
 </div>
 <div class='post'>
-  <h2 class='title'><%= @post.title %></h1>
+  <div class='head'>
+    <h2 class='title'><%= @post.title %></h1>
+    <span class='date'><%= @post.created_at.strftime("%B %d, %Y")%></span>
+  </div>
   <p><%= @post.body %></p>
 </div>

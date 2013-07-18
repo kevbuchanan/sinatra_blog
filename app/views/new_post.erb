@@ -1,0 +1,12 @@
+<h3>Create Your Post</h3>
+<% if @post && @post.errors %>
+  <% @post.errors.each do |attr, error| %>
+    <p><%= attr.capitalize %> <%= error %>.</p>
+  <% end %>
+<% end %>
+<form action='/post/create' method='post'>
+  <input type='text' name='post[title]' placeholder='Your Title'>
+  <input type='text' name='post[tags]' placeholder='tag1, tag2, tag3, etc.'>
+  <textarea name='post[body]' rows='20' cols='50' placeholder='Your Post'></textarea>
+  <input type='submit' text='Create'>
+</form>

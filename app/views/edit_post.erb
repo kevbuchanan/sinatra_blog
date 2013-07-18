@@ -5,8 +5,8 @@
   <% end %>
 <% end %>
 <form action='/post/edit/<%=@post.id%>' method='post'>
-  <input type='text' name='post[title]' value='<%=@post.title%>'>
-  <input type='text' name='post[tags]' value='<%=@post.tags.map(&:title).join(', ')%>'>
-  <textarea name='post[body]' rows='20' cols='50'><%=@post.body%></textarea>
-  <input type='submit' text='Edit'>
+  <input class='text' type='text' name='post[title]' value='<%=@post.title%>'><br>
+  <input class='text' type='text' name='post[tags]' value='<%=@post.tags.map(&:title).join(', ')%>'><br>
+  <textarea class='text' name='post[body]' rows='20' cols='50'><%=@post.body%></textarea><br>
+  <input class='btn new' type='submit' text='Edit'>
 </form>

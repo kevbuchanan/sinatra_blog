@@ -1,12 +1,17 @@
-<form action='/post/delete/<%=@post.id%>' method='post'>
-  <input type='submit' value='Delete Post'>
-</form>
-<form action='/post/edit/<%=@post.id%>' method='get'>
-  <input type='submit' value='Edit Post'>
-</form>
-<h1><%= @post.title %></h1>
-<span>Tags: </span>
-<% @post.tags.each do |tag|%>
-  <a href='/tag/<%=tag.title%>'><%=tag.title%></a>
-<% end %>
-<p><%= @post.body %></p>
+<div class='top'>
+  <form action='/post/edit/<%=@post.id%>' method='get'>
+    <input class='btn edit' type='submit' value='Edit Post'>
+  </form>
+  <form action='/post/delete/<%=@post.id%>' method='post'>
+    <input class='btn delete' type='submit' value='Delete Post'>
+  </form>
+  <div class='tags'>
+  <% @post.tags.each do |tag|%>
+    <a class='tag' href='/tag/<%=tag.title%>'><%=tag.title%></a>
+  <% end %>
+  </div>
+</div>
+<div class='post'>
+  <h2 class='title'><%= @post.title %></h1>
+  <p><%= @post.body %></p>
+</div>

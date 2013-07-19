@@ -18,7 +18,7 @@
     <h2 class='title'><%= @post.title %></h1>
     <span class='date'>
       <% if @post.user %>
-        By <%=@post.user.name%>
+        By <a href='/users/<%=@post.user.id%>/posts'><%=@post.user.name%></a>
       <% else %>
         By Anonymous
       <% end %>

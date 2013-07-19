@@ -1,4 +1,4 @@
-<form action='/post/new' method='get'><input class='btn new' type='submit' value='New Post'></form>
+<form class='new-post' action='/post/new' method='get'><input class='btn new' type='submit' value='New Post'></form>
 <h3>All Posts</h3>
 <ul>
 <% @posts.each do |post| %>
@@ -10,11 +10,13 @@
 <% end %>
 </ul>
 <div class='pages'>
-  <% if previous? %><a class='previous' href="/page/<%=@page - 1%>"><</a><% end %>
+  <div class='inner-pages'>
+  <a class='previous' <% if previous? %>href="/page/<%=@page - 1%>"<% end %>><</a>
   <% 1.upto(pages) do |page| %>
-    <a <%="class='current'" if page == @page = 1%>href="/page/<%=page-1%>"><%=page%></a>
+    <a <%="class='current'" if page == @page + 1%>href="/page/<%=page-1%>"><%=page%></a>
   <% end %>
-  <% if next? %><a class='next' href="/page/<%=@page + 1%>">></a><% end %>
+  <a class='next' <% if next? %>href="/page/<%=@page + 1%>"<% end %>>></a>
+</div>
 </div>
 
 

@@ -47,13 +47,20 @@ th {
 .content {
   background-color: white;
   margin: 20px;
+  margin-top: 0;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+.content .new-post {
+  float: right;
 }
 
 .content h3 {
   border-bottom: 2px solid #BDC3C7;
   color: #2C3E50;
+  clear: both;
+  padding-left: 20px;
 }
 
 .content a {
@@ -184,9 +191,13 @@ input.text {
 }
 
 .pages {
+  text-align: center;
+}
+.inner-pages {
   display: inline-block;
   vertical-align: middle;
-  margin: 0 auto;
+  margin: 20px auto;
+  text-align: center;
 }
 
 .pages a {
@@ -213,3 +224,4 @@ input.text {
 .pages .next {
   border-radius: 0 5px 5px 0;
 }
+

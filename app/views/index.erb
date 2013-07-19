@@ -9,4 +9,12 @@
   </div>
 <% end %>
 </ul>
+<div class='pages'>
+  <% if previous? %><a class='previous' href="/page/<%=@page - 1%>"><</a><% end %>
+  <% 1.upto(pages) do |page| %>
+    <a <%="class='current'" if page == @page = 1%>href="/page/<%=page-1%>"><%=page%></a>
+  <% end %>
+  <% if next? %><a class='next' href="/page/<%=@page + 1%>">></a><% end %>
+</div>
+
 

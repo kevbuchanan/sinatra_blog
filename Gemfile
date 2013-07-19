@@ -15,6 +15,7 @@ gem 'activerecord'
 
 gem 'rake'
 gem 'bcrypt-ruby'
+gem 'will_paginate', '~> 3.0.0'
 
 gem 'shotgun'
 

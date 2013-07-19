@@ -25,14 +25,21 @@ header {
 nav {
   clear: both;
   background-color: #2ECC71;
-  height: 30px;
+  height: 32px;
   line-height: 30px;
   text-align: center;
 }
 
 nav a {
   color: white;
-  margin-right: 10px;
+  margin-right: 0;
+  text-decoration: none;
+  padding: 5px;
+  width: 80px;
+}
+
+nav a:hover {
+  background-color: #27ae60;
 }
 
 header h1 {
@@ -48,6 +55,7 @@ th {
   background-color: white;
   margin: 20px;
   margin-top: 0;
+  margin-bottom: 10px;
   padding: 10px;
   border-radius: 0 0 5px 5px;
 }
@@ -93,6 +101,14 @@ th {
   font-size: 0.8em;
   width: 200px;
   padding: 5px;
+  background-color: #2980B9;
+}
+
+.btn.user:hover {
+  background-color: #3498DB;
+}
+
+.btn.new:hover {
   background-color: #3498DB;
 }
 
@@ -129,12 +145,16 @@ th {
   white-space: nowrap;
 }
 
+.tag:hover {
+  background-color: #2ecc71;
+}
+
 a.tag {
   color: white;
 }
 
 .new {
-  background-color: #3498DB;
+  background-color: #2980B9;
 }
 
 .delete {
@@ -143,11 +163,19 @@ a.tag {
   margin-top: 20px;
 }
 
+.delete:hover {
+  background-color: #c0392b;
+}
+
 .edit {
   background-color: #F39C12;
   float: left;
   margin-right: 20px;
   margin-top: 20px;
+}
+
+.edit:hover {
+  background-color: #e67e22;
 }
 
 .post {
